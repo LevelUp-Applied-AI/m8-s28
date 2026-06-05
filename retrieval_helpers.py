@@ -39,7 +39,7 @@ def index_corpus_if_needed(client: weaviate.Client, corpus_path: str, embedder) 
     skip; otherwise (re)create the schema and ingest.
     """
     expected = 0
-    with open(corpus_path) as f:
+    with open(corpus_path, encoding="utf-8") as f:
         for _ in f:
             expected += 1
 
